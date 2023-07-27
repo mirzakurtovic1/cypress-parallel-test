@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mirzakurtovic1/cypress-parallel-test#readme",
   "dependencies": {
-    "cypress": "^12.17.2"
+    "cypress": "^12.17.2",
+    "cypress-split": "^1.3.15"
   }
 }
