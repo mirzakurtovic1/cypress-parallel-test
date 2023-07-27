@@ -19,11 +19,8 @@ jobs:
         uses: cypress-io/github-action@v5
         timeout-minutes: 60
         with:
-<<<<<<< HEAD
-          command: npx cypress run
-=======
           command: npm run cypress
->>>>>>> de4ba3b91c0149ff88247b6615fa430900fbc52d
+
           browser: chrome
           headed: false
       - name: Uploading artifact
