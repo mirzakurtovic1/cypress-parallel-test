@@ -14,10 +14,6 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v3
-        
-      - name: install
-        with:
-          command: npm install
 
       - name: run cypress tests with chrome
         uses: cypress-io/github-action@v5
