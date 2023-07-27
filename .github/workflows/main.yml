@@ -1,0 +1,39 @@
+name: Automation tests on GUI app
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      [main]
+
+jobs:
+  checkout-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3]
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: run cypress tests with chrome
+        uses: cypress-io/github-action@v5
+            # pass the machine index and the total number
+        env:
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
+        timeout-minutes: 60
+        with:
+          command: npm run test:gui
+          browser: chrome
+          headed: false
+      - name: Uploading artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-execution-report
+          path: cypress/reports/html
+          retention-days: 30
