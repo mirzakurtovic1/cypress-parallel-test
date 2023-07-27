@@ -27,7 +27,7 @@ jobs:
           SPLIT_INDEX: ${{ strategy.job-index }}
         timeout-minutes: 60
         with:
-          command: npm run test:gui
+          command: npx cypress run
           browser: chrome
           headed: false
       - name: Uploading artifact
