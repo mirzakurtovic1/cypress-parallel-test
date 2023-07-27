@@ -14,12 +14,16 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v3
+        
+      - name: install
+        with:
+          command: npm install
 
       - name: run cypress tests with chrome
         uses: cypress-io/github-action@v5
         timeout-minutes: 60
         with:
-          command: npm run test:gui
+          command: npm run cypress
           browser: chrome
           headed: false
       - name: Uploading artifact
