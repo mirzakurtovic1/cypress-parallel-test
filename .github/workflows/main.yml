@@ -28,6 +28,10 @@ jobs:
         timeout-minutes: 60
         with:
           command: npx cypress run
+<<<<<<< HEAD
+=======
+
+>>>>>>> e55da5e944f18c1429ad3676025da12c3bd8fcc0
           browser: chrome
           headed: false
       - name: Uploading artifact
