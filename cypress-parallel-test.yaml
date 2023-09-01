@@ -1,0 +1,10 @@
+namespace: cypress-parallel-test
+cypress-parallel-test:
+  defines: runnable
+  metadata:
+    name: cypress-parallel-test
+    description: A simple application for testing Cypress in parallel setup.
+    icon: https://emojiapi.dev/api/v1/microscope.svg
+  containers:
+    cypress-parallel-test:
+      build: .
