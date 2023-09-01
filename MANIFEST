@@ -1,0 +1,2 @@
+REPO cypress-parallel-test
+LOAD cypress-parallel-test.yaml
